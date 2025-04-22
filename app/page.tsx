@@ -20,7 +20,13 @@ export default function Home() {
       {/* Navigation */}
       <header className="container mx-auto px-4 py-4 sticky top-0 bg-white z-50 shadow-sm rounded-2xl">
         <nav className="flex items-center justify-between">
-        <Image src="/logos.png" alt="LienMate Logo" width={150} height={30} className="rounded-full" />
+        <Image 
+              src="/logos.png" 
+              alt="LienMate Logo" 
+              width={150} 
+              height={30} 
+              className="w-[100px] md:w-[150px] rounded-full" 
+            />
          
           <div className="hidden md:flex items-center space-x-6">
             <Link href="#features" className="text-gray-700 font-medium">
