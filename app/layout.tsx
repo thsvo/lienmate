@@ -9,7 +9,7 @@ export const metadata = {
   title: "Simple lien rights protection for small contractors.",
   description:
     "LienMate tracks your lien deadlines, prepares and sends notices, and files liens automatically — so you can focus on finishing jobs and getting paid.",
-    generator: 'v0.dev'
+    
 }
 
 export default function RootLayout({

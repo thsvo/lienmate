@@ -41,9 +41,7 @@ export default function Home() {
             <Link href="#audience" className="text-gray-700 font-medium">
               Who It's For
             </Link>
-            <Link href="#testimonials" className="text-gray-700 font-medium">
-              Testimonials
-            </Link>
+           
           </div>
 
           <div className=""></div>
@@ -112,18 +110,18 @@ export default function Home() {
       </section>
 
       {/* Shape Divider */}
-      <div className="relative h-24 md:h-32">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute bottom-0 w-full">
+      <div className="relative">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute bottom-0 w-full">
           <path
             fill="#CBEAFF"
             fillOpacity="0.5"
             d="M0,96L80,112C160,128,320,160,480,160C640,160,800,128,960,122.7C1120,117,1280,139,1360,149.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           ></path>
-        </svg>
+        </svg> */}
       </div>
 
       {/* Features Section */}
-      <section id="features" className="bg-[#CBEAFF] bg-opacity-50 py-16">
+      <section id="features" className="bg-[#CBEAFF] bg-opacity-50 py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">🔧 Built for Subs, Not Suits</h2>
@@ -199,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* Shape Divider */}
-      <div className="relative h-24 md:h-32">
+      {/* <div className="relative h-24 md:h-32">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute top-0 w-full rotate-180">
           <path
             fill="#CBEAFF"
@@ -207,8 +205,8 @@ export default function Home() {
             d="M0,96L80,112C160,128,320,160,480,160C640,160,800,128,960,122.7C1120,117,1280,139,1360,149.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           ></path>
         </svg>
-      </div>
-
+      </div> */}
+<br /><br />
       {/* Integrations Section */}
       <section id="integrations" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
@@ -228,7 +226,13 @@ export default function Home() {
           ].map((integration, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center">
               <div className="h-16 w-16 mx-auto mb-4 flex items-center justify-center">
-
+              <Image 
+                   src={integration.image} 
+                   alt={integration.name} 
+                   width={64} 
+                   height={64}
+                   className="object-contain"
+                 />
               </div>
               <h3 className="text-lg font-semibold mb-1"> {integration.name}</h3>
               <p className="text-sm text-gray-500">{integration.description}</p>
@@ -267,7 +271,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-8">
-            <p className="text-xl font-medium">All of it, automated.</p>
+            <p className="text-xl font-medium">All of it, automated</p>
           </div>
         </div>
       </section>
@@ -283,18 +287,46 @@ export default function Home() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            "Subcontractors",
-            "Flooring Installers",
-            "Fencing",
-            "Specialty Contractors",
-            "Roofers",
-            "General Contractors",
-          ].map((audience, index) => (
+            { 
+              name: "Subcontractors", 
+              icon: <Hammer className="h-6 w-6 text-[#0080FF]" /> 
+            },
+            { 
+              name: "Roofers", 
+              icon: <svg className="h-6 w-6 text-[#0080FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 21V10L12 3L21 10V21H3Z M12 3V21" />
+                <path d="M3 10H21" />
+              </svg>
+            },
+            { 
+              name: "Fencing", 
+              icon: <svg className="h-6 w-6 text-[#0080FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 12V20M4 12H20M4 12V4M20 12V20M20 12V4M12 12V20M12 12V4" />
+              </svg>
+            },
+            { 
+              name: "Specialty Contractors", 
+              icon: <Hammer className="h-6 w-6 text-[#0080FF]" /> 
+            },
+            { 
+              name: "Flooring Installers", 
+              icon: <svg className="h-6 w-6 text-[#0080FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 4H20V20H4V4Z" />
+                <path d="M4 12H20M12 4V20M4 8H20M4 16H20M8 4V20M16 4V20" />
+              </svg>
+            },
+            { 
+              name: "General Contractors", 
+              icon: <svg className="h-6 w-6 text-[#0080FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 21H21M3 21V15M21 21V15M3 15V9L12 3L21 9V15M3 15H21" />
+              </svg>
+            },
+          ].map((item, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center">
               <div className="h-12 w-12 bg-[#CBEAFF] rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 className="h-6 w-6 text-[#0080FF]" />
+                {item.icon}
               </div>
-              <h3 className="text-lg font-semibold">{audience}</h3>
+              <h3 className="text-lg font-semibold">{item.name}</h3>
             </div>
           ))}
         </div>
@@ -452,7 +484,7 @@ export default function Home() {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <div className="flex justify-between">
-              <p className="text-gray-400">Email:Hello@Lienmate.com</p> <p className="text-gray-400">© 2025 LienMate. All rights reserved.</p>
+              <p className="text-gray-400">Hello@Lienmate.com</p> <p className="text-gray-400">© 2025 LienMate. All rights reserved.</p>
             </div>
           </div>
         </div>
