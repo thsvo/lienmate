@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -80,6 +81,7 @@ export default function Home() {
               <Button
                 variant="outline"
                 className="border-[#0080FF] text-[#0080FF] hover:bg-[#CBEAFF] hover:text-[#0080FF] text-lg py-6"
+                onClick={() => document.getElementById('process-flow')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works
               </Button>
@@ -207,6 +209,179 @@ export default function Home() {
         </svg>
       </div> */}
 <br /><br />
+      {/* Process Flow Diagram Section */}
+      <section id="process-flow" className="bg-[#F0F8FF] py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4"> End-to-End Protection in 6 Simple Steps</h2>
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+              LienMate syncs with your job data, watches your deadlines, files what's needed, and gets you paid.
+              If things don't go smoothly? We connect you with a trusted construction lawyer — all from inside the app.
+            </p>
+          </div>
+
+          {/* Desktop Process Flow (horizontal) */}
+          <div className="hidden md:block relative mb-12">
+            {/* Connection Lines */}
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-[#CBEAFF] -translate-y-1/2 z-0"></div>
+            
+            {/* Process Steps */}
+            <div className="grid grid-cols-6 gap-4 relative z-10">
+              {[
+                {
+                  icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3" />
+                    <path d="M12 8V12L15 15" />
+                    <path d="M19.5 9C19.5 9 17 12 16 12C15 12 12.5 9 12.5 9" />
+                    <path d="M19 6V12H13" />
+                  </svg>,
+                  title: "Sync Your Job Info",
+                  description: "Auto-import your projects from QuickBooks, Joist, Buildertrend, or even Google Sheets."
+                },
+                {
+                  icon: <Calendar className="h-8 w-8 text-white" />,
+                  title: "Track Deadlines & Lien Rights",
+                  description: "We track every notice and lien deadline for your project and notify you ahead of time."
+                },
+                {
+                  icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 12H2M2 12L6 8M2 12L6 16" />
+                    <rect x="2" y="6" width="20" height="12" rx="2" />
+                  </svg>,
+                  title: "Generate & Mail Notices",
+                  description: "LienMate creates and mails legally compliant lien notices by certified mail, with proof of delivery."
+                },
+                {
+                  icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6V12L16 14" />
+                    <path d="M8 16H16" />
+                  </svg>,
+                  title: "Monitor Payments",
+                  description: "If a payment is late and your lien deadline is approaching, we notify you — fast."
+                },
+                {
+                  icon: <FileText className="h-8 w-8 text-white" />,
+                  title: "File a Lien",
+                  description: "One click and we prep, file, and send your lien — no legal forms, no courthouse, no stress."
+                },
+                {
+                  icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                    <path d="M7.5 12L10.5 15L16.5 9" />
+                  </svg>,
+                  title: "Escalate to Counsel (If Needed)",
+                  description: "If the lien doesn't result in payment, we connect you to a vetted local construction attorney."
+                },
+              ].map((step, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="relative mb-4">
+                    <div className="h-16 w-16 bg-[#0080FF] rounded-full flex items-center justify-center mb-2">
+                      {step.icon}
+                    </div>
+                    <div className="absolute -top-2 -right-2 h-8 w-8 bg-white rounded-full border-2 border-[#0080FF] flex items-center justify-center text-[#0080FF] font-bold">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm h-full w-full">
+                    <h3 className="text-lg font-semibold mb-2 text-center">{step.title}</h3>
+                    <p className="text-gray-600 text-sm text-center">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Final Outcome */}
+            <div className="flex justify-center mt-8">
+              <div className="bg-[#0080FF] text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-lg">
+                <CheckCircle2 className="h-6 w-6" />
+                <span className="font-bold">Final Outcome: You Get Paid</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Mobile Process Flow (vertical) */}
+          <div className="md:hidden space-y-4">
+            {[
+              {
+                icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3" />
+                  <path d="M12 8V12L15 15" />
+                  <path d="M19.5 9C19.5 9 17 12 16 12C15 12 12.5 9 12.5 9" />
+                  <path d="M19 6V12H13" />
+                </svg>,
+                title: "Sync Your Job Info",
+                description: "Auto-import your projects from QuickBooks, Joist, Buildertrend, or even Google Sheets."
+              },
+              {
+                icon: <Calendar className="h-8 w-8 text-white" />,
+                title: "Track Deadlines & Lien Rights",
+                description: "We track every notice and lien deadline for your project and notify you ahead of time."
+              },
+              {
+                icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 12H2M2 12L6 8M2 12L6 16" />
+                  <rect x="2" y="6" width="20" height="12" rx="2" />
+                </svg>,
+                title: "Generate & Mail Notices",
+                description: "LienMate creates and mails legally compliant lien notices by certified mail, with proof of delivery."
+              },
+              {
+                icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6V12L16 14" />
+                  <path d="M8 16H16" />
+                </svg>,
+                title: "Monitor Payments",
+                description: "If a payment is late and your lien deadline is approaching, we notify you — fast."
+              },
+              {
+                icon: <FileText className="h-8 w-8 text-white" />,
+                title: "File a Lien",
+                description: "One click and we prep, file, and send your lien — no legal forms, no courthouse, no stress."
+              },
+              {
+                icon: <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                  <path d="M7.5 12L10.5 15L16.5 9" />
+                </svg>,
+                title: "Escalate to Counsel (If Needed)",
+                description: "If the lien doesn't result in payment, we connect you to a vetted local construction attorney."
+              },
+            ].map((step, index) => (
+              <div key={index} className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
+                <div className="relative flex-shrink-0">
+                  <div className="h-12 w-12 bg-[#0080FF] rounded-full flex items-center justify-center">
+                    {step.icon}
+                  </div>
+                  <div className="absolute -top-2 -right-2 h-6 w-6 bg-white rounded-full border-2 border-[#0080FF] flex items-center justify-center text-[#0080FF] font-bold text-xs">
+                    {index + 1}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </div>
+              </div>
+            ))}
+            
+            {/* Final Outcome - Mobile */}
+            <div className="flex justify-center mt-6">
+              <div className="bg-[#0080FF] text-white px-5 py-2 rounded-full flex items-center gap-2 shadow-md">
+                <CheckCircle2 className="h-5 w-5" />
+                <span className="font-bold">Final Outcome: You Get Paid</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-gray-700 italic">
+              From day one to payout — we handle the paperwork, deadlines, and follow-through, so you don't have to.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Integrations Section */}
       <section id="integrations" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
