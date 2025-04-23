@@ -20,14 +20,14 @@ export default function Home() {
       {/* Navigation */}
       <header className="container mx-auto px-4 py-4 sticky top-0 bg-white z-50 shadow-sm rounded-2xl">
         <nav className="flex items-center justify-between">
-        <Image 
-              src="/logos.png" 
-              alt="LienMate Logo" 
-              width={150} 
-              height={30} 
-              className="w-[100px] md:w-[150px] rounded-full" 
-            />
-         
+          <Image
+            src="/logos.png"
+            alt="LienMate Logo"
+            width={150}
+            height={30}
+            className="w-[100px] md:w-[150px] rounded-full"
+          />
+
           <div className="hidden md:flex items-center space-x-6">
             <Link href="#features" className="text-gray-700 font-medium">
               Features
@@ -46,7 +46,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <Button className="bg-[#0080FF] hover:bg-[#0066CC]">Join the Waitlist</Button>
+          <div className=""></div>
 
           <button className="hidden">
             <svg
@@ -78,7 +78,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-[#0080FF] hover:bg-[#0066CC] text-lg py-6">👉 Join the Waitlist</Button>
+              {/* <Button className="bg-[#0080FF] hover:bg-[#0066CC] text-lg py-6">👉 Join the Waitlist</Button> */}
               <Button
                 variant="outline"
                 className="border-[#0080FF] text-[#0080FF] hover:bg-[#CBEAFF] hover:text-[#0080FF] text-lg py-6"
@@ -97,9 +97,9 @@ export default function Home() {
             </div>
 
             <div className="relative z-10 max-w-[300px] md:max-w-[400px] mx-auto">
-            
- <FilloutForm />
-            
+
+              <FilloutForm />
+
             </div>
 
             <div className="absolute -bottom-20 -right-20 md:block hidden">
@@ -133,6 +133,20 @@ export default function Home() {
             </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8">
+            <div className="flex items-center gap-2 justify-center">
+              <Clock className="h-5 w-5" />
+              <p className="text-lg">Be first to get early access</p>
+            </div>
+            <div className="flex items-center gap-2 justify-center">
+              <HandshakeIcon className="h-5 w-5" />
+              <p className="text-lg">Lock in exclusive pricing</p>
+            </div>
+            <div className="flex items-center gap-2 justify-center">
+              <CheckCircle2 className="h-5 w-5" />
+              <p className="text-lg">Get paid hassle-free</p>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -162,7 +176,7 @@ export default function Home() {
               },
               {
                 title: "Hands-Free Operation",
-                description: "Once you sync your jobs or tools, we handle it all.",
+                description: "Once you sync your jobs, we handle it all.",
                 icon: <HandshakeIcon className="h-6 w-6 text-[#0080FF]" />,
               },
             ].map((feature, index) => (
@@ -214,22 +228,16 @@ export default function Home() {
           ].map((integration, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center">
               <div className="h-16 w-16 mx-auto mb-4 flex items-center justify-center">
-                <Image 
-                  src={integration.image} 
-                  alt={integration.name} 
-                  width={64} 
-                  height={64}
-                  className="object-contain"
-                />
+
               </div>
-              <h3 className="text-lg font-semibold mb-1">🧾 {integration.name}</h3>
+              <h3 className="text-lg font-semibold mb-1"> {integration.name}</h3>
               <p className="text-sm text-gray-500">{integration.description}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-8">
-          <p className="text-gray-700">🔄 Coming soon: Procore, ServiceTitan, Housecall Pro, and more!</p>
+          <p className="text-gray-700">🔄 Coming soon: ServiceTitan, Housecall Pro, and more!</p>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
             Just sync your data — we extract project info, track deadlines, and manage filings in the background.
           </p>
@@ -241,7 +249,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">💸 No More Guessing</h2>
-            <p className="text-lg max-w-2xl mx-auto">LienMate automatically checks:</p>
+            <p className="text-lg max-w-2xl mx-auto bold">LienMate automatically checks</p>
           </div>
 
           <div className="max-w-2xl mx-auto space-y-4">
@@ -267,7 +275,7 @@ export default function Home() {
       {/* Target Audience Section */}
       <section id="audience" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">🎯 Who We Built This For</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4"> Who We Built This For</h2>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto">
             If you're running projects and dealing with late payments, this tool was made for you.
           </p>
@@ -276,11 +284,11 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             "Subcontractors",
-            "Tradespeople",
-            "Small Contractors",
+            "Flooring Installers",
+            "Fencing",
             "Specialty Contractors",
-            "Handypeople",
-            "Solo Builders",
+            "Roofers",
+            "General Contractors",
           ].map((audience, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center">
               <div className="h-12 w-12 bg-[#CBEAFF] rounded-full flex items-center justify-center mx-auto mb-4">
@@ -375,7 +383,7 @@ export default function Home() {
       </section> */}
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="container mx-auto px-4 py-16">
+      {/* <section id="testimonials" className="container mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Stories From Our Customers</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -414,10 +422,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA Section */}
-   
+
       <section className="bg-[#0080FF] text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">🚀 Ready to Stop Chasing Clients for Money?</h2>
@@ -429,7 +437,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto bg-white rounded-lg p-6 shadow-lg">
             <FilloutForm />
           </div>
-          
+
           {/* Original button hidden or can be kept as alternative */}
           {/* <Button className="bg-white text-[#0080FF] hover:bg-gray-100 text-lg py-6 px-8">
             👉 Join the Waitlist Now
@@ -440,10 +448,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-3">
         <div className="container mx-auto px-4">
-         
+
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400">© 2025 LienMate. All rights reserved.</p>
+            <div className="flex justify-between">
+              <p className="text-gray-400">Email:Hello@Lienmate.com</p> <p className="text-gray-400">© 2025 LienMate. All rights reserved.</p>
+            </div>
           </div>
         </div>
       </footer>
