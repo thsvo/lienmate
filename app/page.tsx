@@ -39,7 +39,7 @@ export default function Home() {
               Benefits
             </Link>
             <Link href="#audience" className="text-gray-700 font-medium">
-              Who It's For
+             Made For
             </Link>
            
           </div>
